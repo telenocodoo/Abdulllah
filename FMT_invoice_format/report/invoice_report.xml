@@ -191,6 +191,14 @@
 
                          <tr>
                             <td colspan="5" style="border: 1px solid #000000 !important;padding:5px 0 !important;">
+                                <h6>
+                                    <span style="font-weight:bold;">Tax ID</span><span t-esc="o.partner_id.vat"/>
+                                </h6>
+                            </td>
+                        </tr>
+
+                         <tr>
+                            <td colspan="5" style="border: 1px solid #000000 !important;padding:5px 0 !important;">
                                 <h1>
                                     <h6>
                                         <span style="font-weight:bold;">Landing Place</span>
