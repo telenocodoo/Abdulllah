@@ -161,30 +161,36 @@
                         <thead>
                             <tr>
                             <td colspan="5" style="border: 1px solid #000000 !important;padding:5px 0 !important;">
-                                <h1>
+                                <p style="font-size:30px">
                                     <span>Invoice</span>
                                     <span>فاتوره</span>
-                                </h1>
+                                </p>
                             </td>
                         </tr>
 
                         <tr>
                             <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">
                                 <p>
-                                    <span style="font-weight:bold;">Invoice NO</span><span t-esc="o.name"/><span style="font-weight:bold;">فاتوره رقم</span>
+                                    <span style="font-size:13px;padding-right:10px;">Invoice NO</span>
+                                    <span style="font-size:13px;" t-esc="o.name"/>
+                                    <span style="font-size:13px;padding-left:10px;">فاتوره رقم</span>
                                 </p>
                             </td>
                             <td colspan="2" style="border: 1px solid #000000 !important;padding:5px 0 !important;;">
                             </td>
                             <td colspan="2" style="border: 1px solid #000000 !important;padding:5px 0 !important;">
-                                <span style="font-weight:bold;">Date</span><span t-esc="o.invoice_date"/><span style="font-weight:bold;">تاريخ</span>
+                                <span style="font-size:13px;padding-right:10px;">Date</span>
+                                <span style="font-size:13px;" t-esc="o.invoice_date"/>
+                                <span style="font-size:13px;padding-left:10px;">تاريخ</span>
                             </td>
                         </tr>
                         <tr>
                             <td colspan="5" style="border: 1px solid #000000 !important;padding:5px 0 !important;">
                                 <h6>
-                                    <span style="font-weight:bold;">Importer name</span><span t-esc="o.partner_id.name"/>
-                                    <span style="font-weight:bold;">اسم العميل</span><span t-esc="o.partner_id.arabic_name"/>
+                                    <span style="font-size:13px;padding-right:10px;">Importer name</span>
+                                    <span style="font-size:13px;" t-esc="o.partner_id.name"/>
+                                    <span style="font-size:13px;">اسم العميل</span>
+                                    <span style="font-size:13px;padding-left:10px;" t-esc="o.partner_id.arabic_name"/>
                                 </h6>
                             </td>
                         </tr>
@@ -192,7 +198,9 @@
                          <tr>
                             <td colspan="5" style="border: 1px solid #000000 !important;padding:5px 0 !important;">
                                 <h6>
-                                    <span style="font-weight:bold;">Tax ID</span><span t-esc="o.partner_id.vat"/>
+                                    <span style="font-size:13px;padding-right:10px;">Customer VAT#</span>
+                                    <span style="font-size:13px;" t-esc="o.partner_id.vat"/>
+                                    <span style="font-size:13px;padding-left:10px;">الرقم الضريبي للعميل</span>
                                 </h6>
                             </td>
                         </tr>
@@ -201,9 +209,9 @@
                             <td colspan="5" style="border: 1px solid #000000 !important;padding:5px 0 !important;">
                                 <h1>
                                     <h6>
-                                        <span style="font-weight:bold;">Landing Place</span>
-                                        <span t-esc="o.landing_place.name"/>
-                                        <span style="font-weight:bold;">الميناء</span>
+                                        <span style="font-size:13px;padding-right:10px;">Landing Place</span>
+                                        <span style="font-size:13px;" t-esc="o.landing_place.name"/>
+                                        <span style="font-size:13px;padding-left:10px;">الميناء</span>
                                     </h6>
                                 </h1>
                             </td>
@@ -211,36 +219,46 @@
 
                         <tr>
                             <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">
-                                <p><span style="font-weight:bold;">BAYAN#</span><span t-esc="o.bayan"/><span style="font-weight:bold;">رقم البيان</span></p>
+                                <p>
+                                    <span style="font-size:13px;padding-right:10px;">BAYAN#</span>
+                                    <span style="font-size:13px;" t-esc="o.bayan"/>
+                                    <span style="font-size:13px;padding-left:10px;">رقم البيان</span>
+                                </p>
                             </td>
                             <td colspan="2" style="border: 1px solid #000000 !important;padding:5px 0 !important;;">
                             </td>
                             <td colspan="2" style="border: 1px solid #000000 !important;padding:5px 0 !important;">
-                                <span  style="font-weight:bold;" t-esc="o.bill_of_lading"/>
+                                <span style="font-size:13px;padding-right:10px;">Bill of Lading</span>
+                                <span  style="font-size:13px;" t-esc="o.bill_of_lading"/>
                             </td>
                         </tr>
 
 
-                            <th style="border: 1px solid #000000 !important;border-bottom: 0px solid #000000 !important;padding:0 !important;width:40% !important;">
-                                <p style="margin:5px;font-weight:bold;"><span>Statement</span><span>البيان</span></p>
-                            </th>
-                            <th style="border: 1px solid #000000 !important;border-bottom: 0px solid #000000 !important;padding:0 !important;width:20% !important;">
-                                <p style="margin:5px;font-weight:bold;"><span>Amount</span><span>المبلغ</span></p>
+                            <td style="border: 1px solid #000000 !important;border-bottom: 0px solid #000000 !important;padding:0 !important;width:40% !important;">
+                                <p style="font-size:13px;"><span>Statement</span>
+                                    <span style="font-size:13px;">البيان</span>
+                                </p>
+                            </td>
+                            <td style="border: 1px solid #000000 !important;border-bottom: 0px solid #000000 !important;padding:0 !important;width:10% !important;">
+                                <p>
+                                    <span style="font-size:13px;">Amount</span>
+                                    <span style="font-size:13px;">المبلغ</span>
+                                </p>
                                 <!--<p style="margin:0;font-weight:bold;">المبلغ</p><p style="margin:0;font-weight:bold;">Amount</p>-->
 
-                            </th>
-                            <th style="border: 1px solid #000000 !important;border-bottom: 0px solid #000000 !important;padding:0 !important;width:10% !important;">
-                                <p style="margin:5px;font-weight:bold;"><span>QTY</span><span>العدد</span></p>
+                            </td>
+                            <td style="border: 1px solid #000000 !important;border-bottom: 0px solid #000000 !important;padding:0 !important;width:10% !important;">
+                                <p><span style="font-size:13px;">QTY</span><span style="font-size:13px;">العدد</span></p>
                                 <!--<p style="margin:0;font-weight:bold;">العدد</p><p style="margin:0;font-weight:bold;">QTY</p>-->
-                            </th>
-                            <th style="border: 1px solid #000000 !important;border-bottom: 0px solid #000000 !important;padding:0 !important;width:10% !important;">
-                                <p style="margin:5px;font-weight:bold;"><span>VAT 5%</span><span>الضريبه</span></p>
+                            </td>
+                            <td style="border: 1px solid #000000 !important;border-bottom: 0px solid #000000 !important;padding:0 !important;width:15% !important;">
+                                <p><span style="font-size:13px;">VAT 5%</span><span style="font-size:13px;">الضريبه</span></p>
                                 <!--<p style="margin:0;font-weight:bold;">الضريبه</p><p style="margin:0;font-weight:bold;">VAT 5%</p>-->
-                            </th>
-                            <th style="border: 1px solid #000000 !important;border-bottom: 0px solid #000000 !important;padding:0 !important;width:20% !important;">
-                                <p style="margin:5px;font-weight:bold;"><span>Total Amount</span><span>المجموع الكلي</span></p>
+                            </td>
+                            <td style="border: 1px solid #000000 !important;border-bottom: 0px solid #000000 !important;padding:0 !important;width:25% !important;">
+                                <p><span style="font-size:13px;">Total Amount</span><span style="font-size:13px;">المجموع الكلي</span></p>
                                 <!--<p style="margin:0;font-weight:bold;">المجموع الكلي</p><p style="margin:0;font-weight:bold;">Total Amount</p>-->
-                            </th>
+                            </td>
                             <!--<th style="border: 1px solid #000000 !important;border-bottom: 0px solid #000000 !important;padding:0 !important;width:5% !important;"><p style="margin:0;font-weight:bold;">الوحده</p><p style="margin:0;font-weight:bold;">Unit</p></th>-->
                             <!--<th style="border: 1px solid #000000 !important;border-bottom: 0px solid #000000 !important;padding:0 !important;width:8% !important;"><p style="margin:0;font-weight:bold;">الخصم</p><p style="margin:0;font-weight:bold;">Discount</p></th>-->
                             <!--<th style="border: 1px solid #000000 !important;border-bottom: 0px solid #000000 !important;padding:0 !important;width:15% !important;"><p style="margin:0;font-weight:bold;">اجمالي القيمه</p><p style="margin:0;font-weight:bold;">Total Amount</p></th>-->
@@ -254,22 +272,22 @@
                                         <!--<span t-esc="emp_count"/>-->
                                     <!--</td>-->
                                     <td style="border: 1px solid #000000 !important;padding:5px 0 !important;width:40% !important;">
-                                        <span t-field="line.product_id.name"/>
-                                        <span t-field="line.product_id.arabic_name"/>
+                                        <span style="font-size:13px;" t-field="line.product_id.name"/>
+                                        <span style="font-size:13px;" t-field="line.product_id.arabic_name"/>
                                     </td>
                                     <td style="border: 1px solid #000000 !important;padding:5px 0 !important;width:20% !important;">
-                                        <span t-field="line.price_unit"/>
+                                        <span style="font-size:13px;" t-field="line.price_unit"/>
                                     </td>
                                     <td style="border: 1px solid #000000 !important;padding:5px 0 !important;width:10% !important;">
-                                        <span t-field="line.quantity"/>
+                                        <span style="font-size:13px;" t-field="line.quantity"/>
                                     <!--<span t-field="employee_data.product_uom"/>-->
                                     </td>
                                     <td style="border: 1px solid #000000 !important;padding:5px 0 !important;width:10% !important;">
-                                        <span t-field="line.tax_ids.name"/>
+                                        <span style="font-size:13px;" t-field="line.tax_ids.name"/>
                                     </td>
                                     <td style="border: 1px solid #000000 !important;padding:5px 0 !important;width:20% !important;">
                                         <!--<span t-field="employee_data.tax_id.name"/>-->
-                                    <span t-field="line.price_subtotal"/>
+                                    <span style="font-size:13px;" t-field="line.price_subtotal"/>
                                     </td>
                                     <!--<td style="border: 1px solid #000000 !important;padding:5px 0 !important;width:8% !important;">-->
                                         <!--&lt;!&ndash;<span t-field="employee_data.tax_id.name"/>&ndash;&gt;-->
@@ -282,43 +300,43 @@
                             </t>
                             <tr>
                                 <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">
-                                    <p style="font-weight:bold;"><span>Total with VAT</span><span>مجموع البنود الخاضعه للضريبه</span></p>
+                                    <p><span style="font-size:13px;padding-right:10px;">Total with VAT</span><span style="font-size:13px;">مجموع البنود الخاضعه للضريبه</span></p>
                                 </td>
                                 <td colspan="2" style="border: 1px solid #000000 !important;padding:5px 0 !important;;">
                                 </td>
                                 <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">
                                 </td>
                                 <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">
-                                    <span t-esc="o.get_line_with_vat()['total_with_vat']"/>
+                                    <span style="font-size:13px;" t-esc="o.get_line_with_vat()['total_with_vat']"/>
                                 </td>
                             </tr>
                             <tr>
                                 <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">
-                                    <p style="font-weight:bold;"><span>Total Zero VAT</span><span>مجموع البنود بدون ضريبه</span></p>
+                                    <p style="font-size:13px;padding-right:10px;"><span>Total Zero VAT</span><span style="font-size:13px;">مجموع البنود بدون ضريبه</span></p>
                                 </td>
                                 <td colspan="2" style="border: 1px solid #000000 !important;padding:5px 0 !important;;">
                                 </td>
                                 <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">
                                 </td>
                                 <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">
-                                    <span t-esc="o.get_line_with_vat()['total_without_vat']"/>
+                                    <span style="font-size:13px;" t-esc="o.get_line_with_vat()['total_without_vat']"/>
                                 </td>
                             </tr>
                             <tr>
                                 <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">
-                                    <p style="font-weight:bold;"><span>Total Before VAT</span><span>المجموع قبل الضريبه</span></p>
+                                    <p><span style="font-size:13px;padding-right:10px;">Total Before VAT</span><span style="font-size:13px;">المجموع قبل الضريبه</span></p>
                                 </td>
                                 <td colspan="2" style="border: 1px solid #000000 !important;padding:5px 0 !important;;">
                                 </td>
                                 <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">
                                 </td>
                                 <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">
-                                    <span t-esc="o.amount_untaxed"/>
+                                    <span style="font-size:13px;" t-esc="o.amount_untaxed"/>
                                 </td>
                             </tr>
                             <tr>
                                 <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">
-                                    <p style="font-weight:bold;"><span>VAT 5%</span><span>مقدار الضريبه</span></p>
+                                    <p><span style="font-size:13px;padding-right:10px;">VAT 5%</span><span style="font-size:13px;">مقدار الضريبه</span></p>
                                 </td>
                                 <td colspan="2" style="border: 1px solid #000000 !important;padding:5px 0 !important;;">
                                 </td>
@@ -326,20 +344,20 @@
                                 </td>
                                 <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">
                                     <t t-foreach="o.amount_by_group" t-as="amount_by_group">
-                                        <span t-esc="amount_by_group[3]"/>
+                                        <span style="font-size:13px;" t-esc="amount_by_group[3]"/>
                                     </t>
                                 </td>
                             </tr>
                             <tr>
                                 <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">
-                                    <p style="font-weight:bold;"><span>Total</span><span>المجموع الكلي</span></p>
+                                    <p><span style="font-size:13px;padding-right:10px;">Total</span><span style="font-size:13px;">المجموع الكلي</span></p>
                                 </td>
                                 <td colspan="2" style="border: 1px solid #000000 !important;padding:5px 0 !important;;">
                                 </td>
                                 <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">
                                 </td>
                                 <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">
-                                    <span t-esc="o.amount_total"/>
+                                    <span style="font-size:13px;" t-esc="o.amount_total"/>
                                 </td>
                             </tr>
 
