@@ -375,62 +375,62 @@
 
     </template>
 
-    <template id="external_layout_header" inherit_id="web.external_layout_standard">
-        <xpath expr="//div[@class='header']" position="replace">
-            <div id="" class="header">
-                <style>
-                    .report-header{
-                    width:100% !important;
-                    margin:0 !important;
-                    padding:0 !important;
-                    }
-                    .report-header td,.report-header tr{
-                    margin:0 !important;
-                    padding:0 !important;
-                    }
-                .report-header td p{
-                    margin: 0 0 5px 0 !important;
-                    font-size:0.5em !important;
-                    font-weight: normal !important;
-                    line-height: 0.9 !important;
-                }
-                    .report-header .fa{
-                     padding: 0px 5px 0 5px;
-                    }
-                    .report-header .fa-mobile,.report-header .fa-envelope{
-                     padding: 0px 5px 0 0px;
-                    }
-                    .report-header img{
-                    width:200px;
-                    }
+<!--    <template id="external_layout_header" inherit_id="web.external_layout_standard">-->
+<!--        <xpath expr="//div[@class='header']" position="replace">-->
+<!--            <div id="" class="header">-->
+<!--                <style>-->
+<!--                    .report-header{-->
+<!--                    width:100% !important;-->
+<!--                    margin:0 !important;-->
+<!--                    padding:0 !important;-->
+<!--                    }-->
+<!--                    .report-header td,.report-header tr{-->
+<!--                    margin:0 !important;-->
+<!--                    padding:0 !important;-->
+<!--                    }-->
+<!--                .report-header td p{-->
+<!--                    margin: 0 0 5px 0 !important;-->
+<!--                    font-size:0.5em !important;-->
+<!--                    font-weight: normal !important;-->
+<!--                    line-height: 0.9 !important;-->
+<!--                }-->
+<!--                    .report-header .fa{-->
+<!--                     padding: 0px 5px 0 5px;-->
+<!--                    }-->
+<!--                    .report-header .fa-mobile,.report-header .fa-envelope{-->
+<!--                     padding: 0px 5px 0 0px;-->
+<!--                    }-->
+<!--                    .report-header img{-->
+<!--                    width:200px;-->
+<!--                    }-->
 
 
-                        </style>
-                <!--<table class="report-header" style="width: 20% !important;margin: 0px 0px 0 auto !important;">-->
-                <table class="report-header">
-                    <thead>
-                        <tr>
-                            <td >
-                                 <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 45px;" alt="Logo"/>
-                            </td>
+<!--                        </style>-->
+<!--                &lt;!&ndash;<table class="report-header" style="width: 20% !important;margin: 0px 0px 0 auto !important;">&ndash;&gt;-->
+<!--                <table class="report-header">-->
+<!--                    <thead>-->
+<!--                        <tr>-->
+<!--                            <td >-->
+<!--                                 <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 45px;" alt="Logo"/>-->
+<!--                            </td>-->
 
-                            <td style="width: 20% !important;margin: 0px 0px 0 auto !important;">
-                                <p style="font-size:1.3em !important;font-weight:bold !important;font-family:sans-serif !important;"><span t-field="company.name"/></p>
-                                <p style="font-weight: bold;">
-                                    <span t-field="company.city"/>
-                                    <span t-field="company.country_id.name"/>
-                                </p>
-                                <p><span style="font-weight: bold;">VAT ID:</span> <span t-field="company.vat"/></p>
-                                <p><span style="font-weight: bold;">Email: </span><span t-field="company.email"/></p>
-                                <p><span style="font-weight: bold;">Website: </span><span t-field="company.website"/></p>
-                                <p><span style="font-weight: bold;">Phone: </span><span t-field="company.phone"/></p>
-                            </td>
-                        </tr>
-                    </thead>
-                </table>
-            </div>
-        </xpath>
-    </template>
+<!--                            <td style="width: 20% !important;margin: 0px 0px 0 auto !important;">-->
+<!--                                <p style="font-size:1.3em !important;font-weight:bold !important;font-family:sans-serif !important;"><span t-field="company.name"/></p>-->
+<!--                                <p style="font-weight: bold;">-->
+<!--                                    <span t-field="company.city"/>-->
+<!--                                    <span t-field="company.country_id.name"/>-->
+<!--                                </p>-->
+<!--                                <p><span style="font-weight: bold;">VAT ID:</span> <span t-field="company.vat"/></p>-->
+<!--                                <p><span style="font-weight: bold;">Email: </span><span t-field="company.email"/></p>-->
+<!--                                <p><span style="font-weight: bold;">Website: </span><span t-field="company.website"/></p>-->
+<!--                                <p><span style="font-weight: bold;">Phone: </span><span t-field="company.phone"/></p>-->
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                    </thead>-->
+<!--                </table>-->
+<!--            </div>-->
+<!--        </xpath>-->
+<!--    </template>-->
 
 </data>
 </odoo>
