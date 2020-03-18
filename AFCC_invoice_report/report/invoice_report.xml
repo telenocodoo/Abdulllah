@@ -32,7 +32,10 @@
 
                         <tr t-att-class="'bg-200 font-weight-bold o_line_section' if line.display_type == 'line_section' else 'font-italic o_line_note' if line.display_type == 'line_note' else ''">
                             <t t-if="not line.display_type" name="account_invoice_line_accountable">
-                                <td style="border: 1px solid #000000 !important;padding:5px 0 !important;" class="text-center" name="account_invoice_line_name"><span t-field="line.name" t-options="{'widget': 'text'}"/></td>
+                                <td style="border: 1px solid #000000 !important;padding:5px 0 !important;" name="account_invoice_line_name">
+                                    <span t-field="line.name" t-options="{'widget': 'text'}"/>
+                                    <span t-field="line.arabic_name" t-options="{'widget': 'text'}"/>
+                                </td>
                                 <td style="border: 1px solid #000000 !important;padding:5px 0 !important;" class="text-center">
                                     <span t-esc="'{0:,.1f}'.format(round(line.quantity,2))"/>
                                     <span t-field="line.product_uom_id"  groups="uom.group_uom"/>
@@ -91,8 +94,10 @@
                                     <span style="font-size:13px;">(مجموع البنود الخاضعه للضريبه):</span>
 
                         </td>
-                        <td class="text-center" style="border: 1px solid #000000 !important;">
+                        <td class="text-center" style="font-size:19px;color:black;border: 1px solid #000000 !important;">
+                            <strong>
                             <span  style="font-size:13px;" t-esc="o.get_line_with_vat()['total_with_vat']" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                            </strong>
                         </td>
                     </tr>
 
@@ -105,8 +110,10 @@
                                 <span style="font-size:13px;">(مجموع البنود بدون ضريبه):</span>
 <!--                            </p>-->
                         </td>
-                        <td class="text-center" style="border: 1px solid #000000 !important;">
+                        <td class="text-center" style="font-size:19px;color:black;border: 1px solid #000000 !important;">
+                            <strong>
                             <span  style="font-size:13px;" t-esc="o.get_line_with_vat()['total_without_vat']" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                            </strong>
                         </td>
                      </tr>
 
@@ -115,8 +122,10 @@
                             <span style="font-size:13px;padding-right:10px;">Total Before VAT</span>
                             <span style="font-size:13px;">(المجموع قبل الضريبه):</span>
                         </td>
-                        <td class="text-center" style="border: 1px solid #000000 !important;">
+                        <td class="text-center" style="font-size:19px;color:black;border: 1px solid #000000 !important;">
+                            <strong>
                             <span style="font-size:13px;" t-esc="o.amount_untaxed" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                            </strong>
                         </td>
                      </tr>
 
@@ -127,9 +136,11 @@
                                 <span style="font-size:13px;">(مقدار الضريبه):</span>
 
                         </td>
-                        <td class="text-center" style="border: 1px solid #000000 !important;">
+                        <td class="text-center" style="font-size:19px;color:black;border: 1px solid #000000 !important;">
                             <t t-foreach="o.amount_by_group" t-as="amount_by_group">
+                                <strong>
                                 <span style="line-height: 0.5 !important;font-size:13px;" t-esc="amount_by_group[3]"/>
+                                </strong>
                             </t>
                         </td>
                     </tr>
@@ -141,12 +152,35 @@
                                 <span style="font-size:13px;">(المجموع الكلي):</span>
 <!--                            </p>-->
                         </td>
-                        <td class="text-center" style="border: 1px solid #000000 !important;">
+                        <td class="text-center" style="font-size:19px;color:black;border: 1px solid #000000 !important;">
+                            <strong>
                             <span style="font-size:13px;" t-esc="o.amount_total" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                            </strong>
                         </td>
                     </tr>
 
                 </tbody>
+           </xpath>
+
+           <xpath expr="//div[hasclass('mt32')]" position="replace">
+               <div id="informations" class="row mt32 mb32">
+                        <div class="col-auto mw-100 mb-2" t-if="o.name">
+                            <strong><span style="font-size:17px;color:black;padding-right:5px;">Invoice NO</span></strong>
+                            <span style="font-size:19px;color:black;">رقم الفاتوره</span>
+                            <p class="text-center m-0" t-field="o.name"/>
+                        </div>
+                        <div class="col-auto mw-100 mb-2" t-if="o.invoice_date" >
+                            <strong><span style="font-size:17px;color:black;padding-right:5px;">Invoice Date</span></strong>
+                            <span style="font-size:19px;color:black;">تاريخ الفاتوره</span>
+                            <p class="text-center m-0" t-field="o.invoice_date"/>
+                        </div>
+                        <div class="col-auto mw-100 mb-2" t-if="o.invoice_date_due and o.type == 'out_invoice' and o.state == 'posted'" >
+<!--                            <strong>Due Date</strong>-->
+                            <strong><span style="font-size:17px;color:black;padding-right:5px;">Due Date</span></strong>
+                            <span style="font-size:19px;color:black;">تاريخ الاستحقاق</span>
+                            <p class="text-center m-0" t-field="o.invoice_date_due"/>
+                        </div>
+                    </div>
            </xpath>
 
            <xpath expr="//div[hasclass('page')]//h2" position="before">
@@ -172,8 +206,8 @@
                       <p t-if="o.partner_id.mobile">Mobile :</p>
                       <p t-if="o.partner_id.email">Email :</p>
                       <p t-if="o.partner_id.vat"><span>Customer VAT# :</span></p>
-                      <p t-if="o.name"><span style="font-weight:bold !important;">Invoice # :</span></p>
-                      <p t-if="o.invoice_payment_term_id"><span>Payment Terms :</span></p>
+<!--                      <p t-if="o.name"><span style="font-weight:bold !important;">Invoice # :</span></p>-->
+<!--                      <p t-if="o.invoice_payment_term_id"><span>Payment Terms :</span></p>-->
                       <p t-if="o.landing_place.name"><span>Landing Place :</span></p>
                       <p t-if="o.bayan"><span>BAYAN# :</span></p>
                       <p t-if="o.bill_of_lading"><span>Bill of Lading :</span></p>
@@ -187,8 +221,8 @@
                       <p t-if="o.partner_id.mobile"> <span t-esc="o.partner_id.mobile"/> </p>
                       <p t-if="o.partner_id.email"> <span t-esc="o.partner_id.email"/> </p>
                       <p t-if="o.partner_id.vat"> <span t-esc="o.partner_id.vat"/> </p>
-                      <p t-if="o.name"><span t-esc="o.name"/></p>
-                      <p t-if="o.invoice_payment_term_id"><span t-esc="o.invoice_payment_term_id.name"/></p>
+<!--                      <p t-if="o.name"><span t-esc="o.name"/></p>-->
+<!--                      <p t-if="o.invoice_payment_term_id"><span t-esc="o.invoice_payment_term_id.name"/></p>-->
                       <p t-if="o.landing_place.name"><span t-esc="o.landing_place.name"/></p>
                       <p t-if="o.bayan"><span t-esc="o.bayan"/></p>
                       <p t-if="o.bill_of_lading"><span t-esc="o.bill_of_lading"/></p>
@@ -200,8 +234,8 @@
                       <p t-if="o.partner_id.mobile"><span>:الهاتف المحمول</span></p>
                       <p t-if="o.partner_id.email"><span>:البريد الالكتروني</span></p>
                       <p t-if="o.partner_id.vat"><span>:الرقم الضريبي للعميل</span></p>
-                      <p t-if="o.name"><span style="font-weight:bold !important;">:فاتوره رقم</span></p>
-                      <p t-if="o.invoice_payment_term_id"><span>:شروط الدفع</span></p>
+<!--                      <p t-if="o.name"><span style="font-weight:bold !important;">:فاتوره رقم</span></p>-->
+<!--                      <p t-if="o.invoice_payment_term_id"><span>:شروط الدفع</span></p>-->
                       <p t-if="o.landing_place.name"><span>:الميناء</span></p>
                       <p t-if="o.bayan"><span>:رقم البيان</span></p>
                       <p t-if="o.bill_of_lading"><span>:بوليصة الشحن</span></p>
