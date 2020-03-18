@@ -6,7 +6,7 @@
            <xpath expr="//table//thead//tr" position="replace">
                 <!-- TODO: remove in master -->
                 <t t-set="colspan" t-value="6"/>
-                <th name="th_description" style="background:#a0a0a0;" class="text-center"><span style="font-size:13px;">statement/الوصف</span></th>
+                <th name="th_description" style="background:#a0a0a0;" class="text-center"><span style="font-size:13px;">Description/الوصف</span></th>
                 <th name="th_source" style="background:#a0a0a0;" class="d-none text-center"><span style="font-size:13px;">Source Document</span></th>
                 <th name="th_quantity" style="background:#a0a0a0;" class="text-center"><span style="font-size:13px;">Quantity/العدد</span></th>
                 <th name="th_priceunit" style="background:#a0a0a0;" t-attf-class="text-center {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}"><span style="font-size:13px;">Amount/المبلغ</span></th>
@@ -202,9 +202,9 @@
                   <div style="width:100%;" class="row">
                     <div class="col-auto" style="width:30%;text-align:left;line-height: 0.5 !important;">
                       <p t-if="o.partner_id.name">Customer Name :</p>
-                      <p t-if="o.partner_id.phone">Telephone :</p>
-                      <p t-if="o.partner_id.mobile">Mobile :</p>
-                      <p t-if="o.partner_id.email">Email :</p>
+<!--                      <p t-if="o.partner_id.phone">Telephone :</p>-->
+<!--                      <p t-if="o.partner_id.mobile">Mobile :</p>-->
+<!--                      <p t-if="o.partner_id.email">Email :</p>-->
                       <p t-if="o.partner_id.vat"><span>Customer VAT# :</span></p>
 <!--                      <p t-if="o.name"><span style="font-weight:bold !important;">Invoice # :</span></p>-->
 <!--                      <p t-if="o.invoice_payment_term_id"><span>Payment Terms :</span></p>-->
@@ -217,9 +217,9 @@
                           <span t-esc="o.partner_id.name"/>
                           <span t-esc="o.partner_id.arabic_name"/>
                       </p>
-                      <p t-if="o.partner_id.phone"> <span t-esc="o.partner_id.phone"/> </p>
-                      <p t-if="o.partner_id.mobile"> <span t-esc="o.partner_id.mobile"/> </p>
-                      <p t-if="o.partner_id.email"> <span t-esc="o.partner_id.email"/> </p>
+<!--                      <p t-if="o.partner_id.phone"> <span t-esc="o.partner_id.phone"/> </p>-->
+<!--                      <p t-if="o.partner_id.mobile"> <span t-esc="o.partner_id.mobile"/> </p>-->
+<!--                      <p t-if="o.partner_id.email"> <span t-esc="o.partner_id.email"/> </p>-->
                       <p t-if="o.partner_id.vat"> <span t-esc="o.partner_id.vat"/> </p>
 <!--                      <p t-if="o.name"><span t-esc="o.name"/></p>-->
 <!--                      <p t-if="o.invoice_payment_term_id"><span t-esc="o.invoice_payment_term_id.name"/></p>-->
@@ -230,9 +230,9 @@
 
                     <div class="col-auto" style="width:30%;text-align:right;line-height: 0.5 !important;">
                       <p t-if="o.partner_id.name"><span>:اسم العميل</span></p>
-                      <p t-if="o.partner_id.phone"><span>:الجوال</span></p>
-                      <p t-if="o.partner_id.mobile"><span>:الهاتف المحمول</span></p>
-                      <p t-if="o.partner_id.email"><span>:البريد الالكتروني</span></p>
+<!--                      <p t-if="o.partner_id.phone"><span>:الجوال</span></p>-->
+<!--                      <p t-if="o.partner_id.mobile"><span>:الهاتف المحمول</span></p>-->
+<!--                      <p t-if="o.partner_id.email"><span>:البريد الالكتروني</span></p>-->
                       <p t-if="o.partner_id.vat"><span>:الرقم الضريبي للعميل</span></p>
 <!--                      <p t-if="o.name"><span style="font-weight:bold !important;">:فاتوره رقم</span></p>-->
 <!--                      <p t-if="o.invoice_payment_term_id"><span>:شروط الدفع</span></p>-->
