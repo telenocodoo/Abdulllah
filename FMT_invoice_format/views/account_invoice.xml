@@ -122,6 +122,9 @@
                 <xpath expr="//field[@name='name']" position="after">
                     <field name="arabic_name" placeholder="Arabic Name....."/>
                 </xpath>
+                <xpath expr="//field[@name='street']" position="after">
+                    <field name="arabic_address" placeholder="Arabic address....."/>
+                </xpath>
 
             </field>
         </record>

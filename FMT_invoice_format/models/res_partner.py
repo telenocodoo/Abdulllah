@@ -7,6 +7,7 @@ class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     arabic_name = fields.Char()
+    arabic_address = fields.Char()
 
 
 class ProductTemplate(models.Model):
